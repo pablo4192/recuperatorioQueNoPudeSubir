@@ -1,0 +1,39 @@
+# depslib dependency file v1.0
+1621040016 source:c:\users\kiano\desktop\juegosinfantiles\juegosinfantiles.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	"juegosInfantiles.h"
+
+1621040016 c:\users\kiano\desktop\juegosinfantiles\juegosinfantiles.h
+
+1621039533 source:c:\users\kiano\desktop\juegosinfantiles\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	"juegosInfantiles.h"
+
+1621040017 source:c:\users\kiano\desktop\juegosinfantiles\alquiler.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	"juegosInfantiles.h"
+	"juegos.h"
+	"alquiler.h"
+
+1621040016 c:\users\kiano\desktop\juegosinfantiles\juegos.h
+
+1621040016 c:\users\kiano\desktop\juegosinfantiles\alquiler.h
+
+1621040016 source:c:\users\kiano\desktop\juegosinfantiles\juegos.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	"juegosInfantiles.h"
+	"juegos.h"
+	"alquiler.h"
+
