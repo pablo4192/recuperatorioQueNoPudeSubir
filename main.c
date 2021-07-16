@@ -5,25 +5,31 @@
 #include "juegosInfantiles.h"
 #include "juegos.h"
 #include "alquiler.h"
+#include "utn.h"
+#include "informes.h"
+#include "dataWareHouse.h"
 
 #define TAM 10
 #define TAMCAT 5
-#define TAMJUEGOS 5
+#define TAMJUEGOS 6
 #define TAMALQ 10
+#define TAMLOC 10
 
 int main()
 {
-    eCliente clientes[TAM]={
-    {100, "Pepe", "Cakero", 'm', 1550505060, 0},
-    {101, "Julian", "Perez", 'm', 1560908042, 0},
-    {102, "Carla", "Miller", 'f', 1550963602, 0},
-    {103, "Andres", "Yuti", 'm', 1550508914, 0},
-    {104, "Mica", "Randal", 'f', 1550505896, 0},
-    {105, "Lorena", "Poli", 'f', 1550505458, 0},
-    {106, "Jose", "Chatruc", 'm', 1550145896, 0},
-    {107, "Flavio", "Mendoza", 'm', 1550986325, 0},
-    {108, "Bernardo", "Gandorchi", 'm', 1550450360, 0},
-    {109, "Maria", "Odonnel", 'f', 1550507896, 0},
+    eCliente clientes[TAM];
+
+    eLocalidad localidades[TAMLOC]={
+    {1765, "Pompeya"},
+    {1754, "Ramos"},
+    {1785, "Burzaco"},
+    {1786, "ElPato"},
+    {1748, "Chascomus"},
+    {1752, "Tablada"},
+    {1736, "Tapiales"},
+    {1791, "Liniers"},
+    {1780, "Lugano"},
+    {1759, "Bonzi"}
     };
 
     eAlquileres alquileres[TAMALQ];
@@ -38,10 +44,11 @@ int main()
 
     eJuego juegos[TAMJUEGOS]={
     {1000, "Damas", 400, 1},
-    {1001, "Generala", 300,2},
+    {1001, "Generala", 300, 2},
     {1002, "Teg", 600, 3},
     {1003, "Poker", 800,4},
     {1004, "CartasMag", 200,5},
+    {1005, "Ludo", 750, 1}
     };
 
     int nextIdCliente=100;
@@ -49,8 +56,10 @@ int main()
     char seguir='s';
     char confirma='s';
 
-    //inicializarClientes(clientes, TAM);
+    inicializarClientes(clientes, TAM);
     inicializarAlquileres(alquileres, TAMALQ);
+    hardcodearClientes(clientes, TAM, 10, &nextIdCliente);
+    hardcodearAlquileres(alquileres, TAMALQ, 10, &nextIdAlquiler);
 
     do
     {
@@ -99,7 +108,7 @@ int main()
             break;
         case 5:
             system("cls");
-            if(altaAlquiler(alquileres, TAMALQ, &nextIdAlquiler, juegos, TAMJUEGOS, categorias, TAMCAT))
+            if(altaAlquiler(alquileres, TAMALQ, &nextIdAlquiler, juegos, TAMJUEGOS, categorias, TAMCAT, clientes, TAM))
             {
                 printf("Alta alquiler exitosa!!\n");
             }
@@ -110,10 +119,16 @@ int main()
             system("pause");
             break;
         case 6:
-            listarAlquileres(alquileres, TAMALQ);
+            system("cls");
+            listarAlquileres(alquileres, TAMALQ, clientes, TAM, juegos, TAMJUEGOS, categorias, TAMCAT);
             system("pause");
             break;
         case 7:
+            system("cls");
+            menuInformes(clientes, TAM, juegos, TAMJUEGOS, categorias, TAMCAT, alquileres, TAMALQ, localidades, TAMLOC);
+            system("pause");
+            break;
+        case 8:
             printf("Seguro desea salir? ");
             fflush(stdin);
             scanf("%c", &confirma);
@@ -125,7 +140,7 @@ int main()
             {
                 printf("Salida cancelada\n");
             }
-            system("pause");
+
             break;
 
         }

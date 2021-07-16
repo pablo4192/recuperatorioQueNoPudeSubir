@@ -3,15 +3,18 @@
 #include <string.h>
 #include <ctype.h>
 #include "juegosInfantiles.h"
+#include "utn.h"
+#include "informes.h"
+
 
 
 
 
 int menu()
 {
-    int opcion; //variable donde guardo la opcion elegida
+    int opcion;
 
-    system("cls"); //para limpiar cada vez que aparece el menu
+    system("cls");
     printf("*** Menu Gestion de Juegos Infantiles ***\n");
     printf("1) Alta Clientes\n");
     printf("2) Modificar Clientes\n");
@@ -19,12 +22,12 @@ int menu()
     printf("4) Listar Clientes\n");
     printf("5) Alta Alquiler\n");
     printf("6) Listar Alquileres\n");
-    printf("7) Salir\n");
+    printf("7) Informes\n");
+    printf("8) Salir\n");
 
-    printf("Escoja una opcion: ");
-    scanf("%d", &opcion);   //guardo la opcion
+    utn_getNumero(&opcion, "Escoja una opcion: \n", "Error ingrese una opcion valida: \n", 1, 8, 3);
 
-    return opcion;  //retorno la opcion al main
+    return opcion;
 }
 
 int altaCliente(eCliente lista[], int tam, int* pId)
@@ -50,20 +53,36 @@ int altaCliente(eCliente lista[], int tam, int* pId)
             printf("Se le asigno el id: %d\n", *pId);
             nuevoCliente.codigo=*pId;
 
-            printf("Ingrese Nombre: ");
-            fflush(stdin);
-            scanf("%s", nuevoCliente.nombre);
+            if(!utn_getStringChar(nuevoCliente.nombre, "Ingrese Nombre: \n", "Error Ingrese nombre (Solo letras, Respete min y max caracteres): \n", 2, 51, 2))
+            {
+                printf("Hubo un problema al guardar el Nombre\n");
+            }
 
-            printf("Ingrese Apellido: ");
-            fflush(stdin);
-            scanf("%s", nuevoCliente.apellido);
+            if(!utn_getStringChar(nuevoCliente.apellido, "Ingrese Apellido: \n", "Error Ingrese Apellido (Solo letras, Respete min y max caracteres): \n", 2, 51, 2))
+            {
+                printf("Hubo un problema al guardar el Apellido\n");
+            }
 
-            printf("Ingrese sexo: ");
-            fflush(stdin);
-            scanf("%c", &nuevoCliente.sexo);
+            if(!utn_getSexo(&nuevoCliente.sexo, "Ingrese sexo (f (femenino), m (masculino), o (otro)): \n", "Error.. \n", 2))
+            {
+                 printf("Hubo un problema al guardar el Sexo\n");
+            }
 
-            printf("Ingrese Telefono: ");
-            scanf("%d", &nuevoCliente.telefono);
+            if(!utn_getNumero(&nuevoCliente.localidad.id, "Ingrese idLocalidad (cod.post): \n", "Error ingrese un id valido (cod.post): \n", 1000, 1999, 3))
+            {
+                printf("Hubo un problema al guardar id localidad\n");
+            }
+
+            if(!utn_getStringChar(nuevoCliente.localidad.descripcion, "Ingrese nombre localidad: \n", "Error ingrese nombre localidad valida: \n", 2, 20, 3))
+            {
+                printf("Hubo un problema al guardar la localidad\n");
+            }
+
+            if(!utn_getTelefono(nuevoCliente.telefono, "Ingrese telefono: \n", "Error, respete maximo caracteres..\n", 21, 3))
+            {
+                printf("Hubo un problema al guardar el telefono\n");
+            }
+
 
             nuevoCliente.isEmpty=0;
             lista[indice]=nuevoCliente;
@@ -137,39 +156,44 @@ int modificarCliente(eCliente lista[], int tam)
         else
         {
 
-            listarClientes(lista, tam);
+            mostrarCliente(lista[indice]);
 
             printf("\n\n");
             printf("Informacion del Cliente:\n");
             printf("1) Nombre\n");
             printf("2) Apellido\n");
-            printf("3) Sexo\n");
-            printf("4) Telefono\n");
+            printf("3) Telefono\n");
+
+            if(utn_getNumero(&opcion, "Escoja una opcion: \n", "Error ingrese una opcion valida: \n", 1, 3, 2))
+            {
+                printf("Confirma opcion?: \n");
+                fflush(stdin);
+                scanf("%c", &confirma);
+            }
 
 
-            printf("Que dato desea Modificar?: ");
-            scanf("%d", &opcion);
-
-            printf("Confirma opcion?: \n");
-            fflush(stdin);
-            scanf("%c", &confirma);
 
             if(confirma=='s')
             {
                 switch(opcion)
                 {
                 case 1:
-                    printf("Modificar nombre: ");
-                    scanf("%s", lista[indice].nombre);
+                    if(!utn_getStringChar(lista[indice].nombre, "Ingrese Nombre: \n", "Error Ingrese nombre (Solo letras, Respete min y max caracteres): \n", 2, 51, 2))
+                    {
+                        printf("Hubo un problema al guardar el Nombre\n");
+                    }
                     break;
                 case 2:
-                    printf("Modificar Apellido: ");
-                    scanf("%s", lista[indice].apellido);
+                    if(!utn_getStringChar(lista[indice].apellido, "Ingrese Apellido: \n", "Error Ingrese Apellido (Solo letras, Respete min y max caracteres): \n", 2, 51, 2))
+                    {
+                        printf("Hubo un problema al guardar el Apellido\n");
+                    }
                     break;
                 case 3:
-                    printf("Modificar Telefono: ");
-                    fflush(stdin);
-                    scanf("%d", &lista[indice].telefono);
+                    if(!utn_getTelefono(lista[indice].telefono, "Ingrese telefono: \n", "Error, respete maximo caracteres..\n", 21, 2))
+                    {
+                        printf("Hubo un problema al guardar el telefono\n");
+                    }
                     break;
 
                 }
@@ -191,7 +215,7 @@ int listarClientes(eCliente lista[], int tam)
     int flagNoSeMostro=1;
 
     printf("      *** Listado de Clientes ***  \n\n");
-    printf("Codigo     Nombre  Apellido  Sexo     Telefono  \n");
+    printf("Codigo    Nombre      Apellido  Sexo    idLoc   DescripcionLoc     Telefono  \n");
 
     if(lista!=NULL && tam>=0)
     {
@@ -220,11 +244,13 @@ int listarClientes(eCliente lista[], int tam)
 
 void mostrarCliente(eCliente unCliente)  //recibe solo un empleado a la vez y lo printea
 {
-   printf("%d  %10s    %10s   %c   %d   \n", unCliente.codigo,
-                                             unCliente.nombre,
-                                             unCliente.apellido,
-                                             unCliente.sexo,
-                                             unCliente.telefono);
+   printf(" %d  %10s    %10s     %c     %d       %10s   %s   \n", unCliente.codigo,
+                                                    unCliente.nombre,
+                                                    unCliente.apellido,
+                                                    unCliente.sexo,
+                                                    unCliente.localidad.id,
+                                                    unCliente.localidad.descripcion,
+                                                    unCliente.telefono);
 
 }
 
@@ -317,10 +343,125 @@ int bajaCliente(eCliente lista[], int tam)
     return todoOk;
 }
 
+int cargarApellidoCliente(int idCliente, eCliente clientes[], int tam, char nombre[], char apellido[])
+{
+    int todoOk=0;
+
+    if(clientes!=NULL && tam>0 && apellido!=NULL)
+    {
+        for(int i=0; i<tam; i++)
+        {
+            if(clientes[i].codigo==idCliente && !clientes[i].isEmpty)
+            {
+                strcpy(nombre, clientes[i].nombre);
+                strcpy(apellido, clientes[i].apellido);
+                todoOk=1;
+                break;
+            }
+        }
+
+    }
+
+    return todoOk;
+
+}
+
+int buscarLocalidad(eLocalidad localidades[], int tamL, int idLoc)
+{
+    int indice=-1;
 
 
+    if(localidades!=NULL && tamL>0 && idLoc>0)
+    {
+        for(int i=0; i<tamL; i++)
+        {
+            if(localidades[i].id==idLoc)
+            {
+                indice=i;
+                break;
+            }
+        }
+    }
+
+    return indice;
 
 
+}
 
+int cargarLocalidadCliente(int idCliente, eCliente clientes[], int tam, char decripcionLocalidad[])
+{
+    int retorno=0;
+
+    if(decripcionLocalidad!=NULL && clientes!=NULL && tam>0 && idCliente>0)
+    {
+        for(int i=0; i<tam; i++)
+        {
+            if(clientes[i].codigo==idCliente)
+            {
+                strcpy(decripcionLocalidad, clientes[i].localidad.descripcion);
+                retorno=1;
+                break;
+            }
+        }
+
+    }
+
+    return retorno;
+
+}
+
+int listarLocalidades(eLocalidad localidades[], int tamLoc)
+{
+    int todoOk=0;
+    int flagNoSeMostro=1;
+
+    printf("      *** Listado de localidades ***  \n\n");
+    printf("idLocalidad    Descripcion  \n");
+
+    if(localidades!=NULL && tamLoc>0)
+    {
+        for(int i=0; i<tamLoc; i++)
+        {
+            mostrarLocalidad(localidades[i]);
+            flagNoSeMostro=0;
+            todoOk=1;
+        }
+
+
+        if(flagNoSeMostro)
+        {
+            printf("No hay localidades para mostrar");
+
+        }
+    }
+    printf("\n\n");
+    return todoOk;
+}
+
+void mostrarLocalidad(eLocalidad unaLocalidad)
+{
+    printf(" %d  %10s    \n", unaLocalidad.id, unaLocalidad.descripcion);
+
+}
+
+int buscarClienteMujer(eCliente lista[], int tam, int id)    //busco el legajo pasado por parametro en el arreay de empleados
+{
+    int indice=-1;
+
+    if(lista!=NULL && tam>0)
+    {
+        for(int i=0; i<tam; i++)
+        {
+            if(!lista[i].isEmpty && id==lista[i].codigo && lista[i].sexo=='f')
+            {
+                indice=i;
+                break;
+            }
+        }
+    }
+
+    return indice;
+
+}
 
 

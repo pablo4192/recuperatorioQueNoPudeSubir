@@ -1,34 +1,16 @@
 # depslib dependency file v1.0
-1621040016 source:c:\users\kiano\desktop\juegosinfantiles\juegosinfantiles.c
+1626477096 source:c:\users\kiano\desktop\juegosinfantiles\juegosinfantiles.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
 	<ctype.h>
 	"juegosInfantiles.h"
+	"utn.h"
+	"informes.h"
 
-1621040016 c:\users\kiano\desktop\juegosinfantiles\juegosinfantiles.h
+1626477096 c:\users\kiano\desktop\juegosinfantiles\juegosinfantiles.h
 
-1621039533 source:c:\users\kiano\desktop\juegosinfantiles\main.c
-	<stdio.h>
-	<stdlib.h>
-	<string.h>
-	<ctype.h>
-	"juegosInfantiles.h"
-
-1621040017 source:c:\users\kiano\desktop\juegosinfantiles\alquiler.c
-	<stdio.h>
-	<stdlib.h>
-	<string.h>
-	<ctype.h>
-	"juegosInfantiles.h"
-	"juegos.h"
-	"alquiler.h"
-
-1621040016 c:\users\kiano\desktop\juegosinfantiles\juegos.h
-
-1621040016 c:\users\kiano\desktop\juegosinfantiles\alquiler.h
-
-1621040016 source:c:\users\kiano\desktop\juegosinfantiles\juegos.c
+1626475543 source:c:\users\kiano\desktop\juegosinfantiles\main.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -36,4 +18,68 @@
 	"juegosInfantiles.h"
 	"juegos.h"
 	"alquiler.h"
+	"utn.h"
+	"informes.h"
+	"dataWareHouse.h"
+
+1626473452 source:c:\users\kiano\desktop\juegosinfantiles\alquiler.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	"juegosInfantiles.h"
+	"juegos.h"
+	"alquiler.h"
+	"utn.h"
+	"informes.h"
+
+1622332497 c:\users\kiano\desktop\juegosinfantiles\juegos.h
+
+1626047684 c:\users\kiano\desktop\juegosinfantiles\alquiler.h
+	"juegosInfantiles.h"
+	"juegos.h"
+
+1622333404 source:c:\users\kiano\desktop\juegosinfantiles\juegos.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	"juegosInfantiles.h"
+	"juegos.h"
+	"alquiler.h"
+	"utn.h"
+	"informes.h"
+
+1626393057 source:c:\users\kiano\desktop\juegosinfantiles\utn.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	"utn.h"
+
+1626044043 c:\users\kiano\desktop\juegosinfantiles\utn.h
+
+1626479629 c:\users\kiano\desktop\juegosinfantiles\informes.h
+	"juegos.h"
+	"alquiler.h"
+
+1626478183 source:c:\users\kiano\desktop\juegosinfantiles\informes.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	"juegosInfantiles.h"
+	"juegos.h"
+	"alquiler.h"
+	"utn.h"
+	"informes.h"
+
+1626048460 source:c:\users\kiano\desktop\juegosinfantiles\datawarehouse.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"alquiler.h"
+	"dataWareHouse.h"
+
+1626048460 c:\users\kiano\desktop\juegosinfantiles\datawarehouse.h
 
