@@ -2,34 +2,104 @@
 <CodeBlocks_layout_file>
 	<FileVersion major="1" minor="0" />
 	<ActiveTarget name="Debug" />
-	<File name="informes.c" open="1" top="1" tabpos="1" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="main.c" open="1" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="1400" topLine="0" />
+			<Cursor1 position="492" topLine="34" />
+		</Cursor>
+	</File>
+	<File name="alquiler.h" open="1" top="0" tabpos="8" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="315" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="juegosInfantiles.h" open="1" top="0" tabpos="11" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="3865" topLine="137" />
+		</Cursor>
+	</File>
+	<File name="informes.h" open="1" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="5837" topLine="206" />
+		</Cursor>
+	</File>
+	<File name="dataWareHouse.h" open="1" top="0" tabpos="9" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="0" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="juegos.h" open="1" top="0" tabpos="10" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="145" topLine="3" />
+		</Cursor>
+	</File>
+	<File name="dataWareHouse.c" open="1" top="0" tabpos="7" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="631" topLine="14" />
 		</Cursor>
 		<Folding>
-			<Collapse line="11" />
-			<Collapse line="101" />
-			<Collapse line="124" />
-			<Collapse line="177" />
-			<Collapse line="240" />
-			<Collapse line="300" />
-			<Collapse line="334" />
-			<Collapse line="372" />
-			<Collapse line="409" />
-			<Collapse line="477" />
-			<Collapse line="528" />
-			<Collapse line="564" />
-			<Collapse line="596" />
+			<Collapse line="82" />
+			<Collapse line="105" />
 		</Folding>
+	</File>
+	<File name="juegos.c" open="1" top="0" tabpos="5" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="435" topLine="0" />
+		</Cursor>
+		<Folding>
+			<Collapse line="13" />
+			<Collapse line="32" />
+			<Collapse line="43" />
+			<Collapse line="65" />
+			<Collapse line="87" />
+		</Folding>
+	</File>
+	<File name="alquiler.c" open="1" top="0" tabpos="6" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1707" topLine="33" />
+		</Cursor>
+		<Folding>
+			<Collapse line="71" />
+			<Collapse line="151" />
+			<Collapse line="169" />
+		</Folding>
+	</File>
+	<File name="informes.c" open="1" top="1" tabpos="1" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="2191" topLine="45" />
+		</Cursor>
+		<Folding>
+			<Collapse line="139" />
+			<Collapse line="162" />
+			<Collapse line="215" />
+			<Collapse line="278" />
+			<Collapse line="338" />
+			<Collapse line="372" />
+			<Collapse line="410" />
+			<Collapse line="447" />
+			<Collapse line="515" />
+			<Collapse line="566" />
+			<Collapse line="602" />
+			<Collapse line="634" />
+			<Collapse line="667" />
+			<Collapse line="721" />
+			<Collapse line="764" />
+			<Collapse line="798" />
+			<Collapse line="831" />
+		</Folding>
+	</File>
+	<File name="utn.h" open="0" top="0" tabpos="14" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="5125" topLine="0" />
+		</Cursor>
 	</File>
 	<File name="utn.c" open="0" top="0" tabpos="13" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
 			<Cursor1 position="7514" topLine="299" />
 		</Cursor>
 	</File>
-	<File name="juegosInfantiles.c" open="1" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="juegosInfantiles.c" open="1" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="6500" topLine="16" />
+			<Cursor1 position="11573" topLine="0" />
 		</Cursor>
 		<Folding>
 			<Collapse line="13" />
@@ -44,73 +114,9 @@
 			<Collapse line="302" />
 			<Collapse line="346" />
 			<Collapse line="369" />
-		</Folding>
-	</File>
-	<File name="dataWareHouse.h" open="1" top="0" tabpos="8" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="0" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="utn.h" open="0" top="0" tabpos="14" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="5125" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="alquiler.h" open="1" top="0" tabpos="7" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="315" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="alquiler.c" open="1" top="0" tabpos="5" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="5406" topLine="71" />
-		</Cursor>
-		<Folding>
-			<Collapse line="13" />
-			<Collapse line="46" />
-			<Collapse line="148" />
-			<Collapse line="166" />
-		</Folding>
-	</File>
-	<File name="main.c" open="1" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="2167" topLine="90" />
-		</Cursor>
-	</File>
-	<File name="juegosInfantiles.h" open="1" top="0" tabpos="11" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="320" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="juegos.h" open="1" top="0" tabpos="10" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="145" topLine="3" />
-		</Cursor>
-	</File>
-	<File name="juegos.c" open="1" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="1408" topLine="0" />
-		</Cursor>
-		<Folding>
-			<Collapse line="13" />
-			<Collapse line="32" />
-			<Collapse line="43" />
-			<Collapse line="65" />
-			<Collapse line="87" />
-		</Folding>
-	</File>
-	<File name="informes.h" open="1" top="0" tabpos="9" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="4370" topLine="144" />
-		</Cursor>
-	</File>
-	<File name="dataWareHouse.c" open="1" top="0" tabpos="6" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="1294" topLine="50" />
-		</Cursor>
-		<Folding>
-			<Collapse line="82" />
-			<Collapse line="105" />
+			<Collapse line="391" />
+			<Collapse line="413" />
+			<Collapse line="447" />
 		</Folding>
 	</File>
 </CodeBlocks_layout_file>
